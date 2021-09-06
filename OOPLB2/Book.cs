@@ -28,9 +28,22 @@ namespace OOPLB2
             this.date = date;
         }
 
+        private string Year()
+        {
+            if (date >= 2010) return " Нова книга";
+            else return " Стара книга";
+        }
+
+        private string Num__year()
+        {
+            int num = 2021 - date;
+            if (num == 0) return " Цього річна книга";
+            else return Convert.ToString(num);
+        }
+
         public void Info()
         {
-            MessageBox.Show($"Данні книгі:\nНазва:{name} \nАвтор:{avtor} \nРік видання:{date}", "Інформація", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Данні книгі:\nНазва: {name} \nАвтор: {avtor} \nРік видання: {date} \nСкільки років книзі: {Num__year()} \nДоп. Інформація: {Year()}", "Інформація", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
